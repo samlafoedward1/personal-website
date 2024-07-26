@@ -233,25 +233,56 @@
           </p>
           <div class="split style1">
             <section>
-              <form method="post" action="#">
-                <div class="fields">
-                  <div class="field half">
-                    <label for="name">Name</label>
-                    <input type="text" name="name" id="name" />
+              <section>
+                <form method="post" action="assets/sendmail.php">
+                  <div class="fields">
+                    <div class="field half">
+                      <label for="name">Name</label>
+                      <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        placeholder="Your Name"
+                        required
+                      />
+                    </div>
+                    <div class="field half">
+                      <label for="email">Email</label>
+                      <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        placeholder="your.email@example.com"
+                        required
+                      />
+                    </div>
+                    <div class="field">
+                      <label for="message">Message</label>
+                      <textarea
+                        name="message"
+                        id="message"
+                        rows="5"
+                        placeholder="Type your message here..."
+                        required
+                      ></textarea>
+                    </div>
                   </div>
-                  <div class="field half">
-                    <label for="email">Email</label>
-                    <input type="text" name="email" id="email" />
-                  </div>
-                  <div class="field">
-                    <label for="message">Message</label>
-                    <textarea name="message" id="message" rows="5"></textarea>
-                  </div>
-                </div>
-                <ul class="actions">
-                  <li><a href="" class="button submit">Send Message</a></li>
-                </ul>
-              </form>
+                  <ul class="actions">
+                    <li>
+                      <input
+                        type="hidden"
+                        name="csrf_token"
+                        value="<?php echo $_SESSION['csrf_token']; ?>"
+                      />
+                      <input
+                        type="submit"
+                        class="button"
+                        value="Send Message"
+                      />
+                    </li>
+                  </ul>
+                </form>
+              </section>
             </section>
             <section>
               <ul class="contact">
