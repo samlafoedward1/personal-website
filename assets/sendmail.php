@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Set the recipient email address.
-    $recipient = "your-email@example.com";
+    $recipient = "edwardmawuko75@gmail.com";
 
     // Set the email subject.
     $subject = "New contact from $name";
@@ -61,4 +61,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     http_response_code(403);
     echo "There was a problem with your submission, please try again.";
 }
-?>
+
